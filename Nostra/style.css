@@ -1,0 +1,220 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* --- STICKY FOOTER FIX (Crucial Changes) --- */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    /* NEW STYLES for Sticky Footer: */
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;      /* Ensures body takes full viewport height */
+}
+
+.main-content-wrapper {
+    flex-grow: 1; /* Pushes the footer to the bottom */
+}
+/* ------------------------------------------- */
+
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+#menuicon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* --- Hero Section (index.html) --- */
+.hero-section {
+    position: relative;
+    height: 400px;
+    background-image: url('images/hero-bg.jpg'); /* CHANGE THIS PATH */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section button {
+    padding: 10px 25px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+/* --- Product Sections (index.html & collections.html) --- */
+.featured-products, .collections-main {
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.product-container, .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-card {
+    width: 250px;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- Search and Filter (collections.html) --- */
+.search-filter-section {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#searchInput, #filterSelect {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+/* --- Contact and Login Forms --- */
+.contact-container, .login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label, .login-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea, .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button, .login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    /* Removed margin-top to let the flex-grow property handle the spacing */
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    #menuicon {
+        display: block;
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .featured-products, .collections-main {
+        padding: 20px;
+    }
+
+    .search-filter-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #searchInput, #filterSelect {
+        width: 100%;
+    }
+
+}
